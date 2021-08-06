@@ -95,7 +95,7 @@ class Blockchain(object):
     def valid_proof(last_proof, proof):
         # checks if the proof is valid
         this_proof = f'{proof}{last_proof}'.encode()
-        this_proof_hash = hashlib.sha256(this_proof).hexdigest()
+        this_proof_hash = hashlib.sha3_256(this_proof).hexdigest()
         return this_proof_hash[:4] == '0000'
 
 
